@@ -8,6 +8,9 @@ Marketplace NFT on RSK
 # Features
 
 1)Low fees
+
 2)Low minting fee
+
 3)Security by Bitcoin
+
 4)Buy/Sell using RBTC
