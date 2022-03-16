@@ -63,7 +63,7 @@ interface IFantomTokenRegistry {
 }
 
 interface IFantomPriceFeed {
-    function wFTM() external view returns (address);
+    function RBTC() external view returns (address);
 
     function getPrice(address) external view returns (int256, uint8);
 }
