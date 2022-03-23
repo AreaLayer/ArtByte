@@ -4,11 +4,11 @@ pragma solidity 0.6.12;
 
 import "@openzeppelin/contracts/access/Ownable.sol";
 
-interface IFantomAddressRegistry {
+interface IRSKSmartBitcoinAddressRegistry {
     function tokenRegistry() external view returns (address);
 }
 
-interface IFantomTokenRegistry {
+interface IRSKSmartBitcoinRegistry {
     function enabled(address) external returns (bool);
 }
 
@@ -25,12 +25,12 @@ contract FantomPriceFeed is Ownable {
     /// @notice fantom address registry contract
     address public addressRegistry;
 
-    /// @notice wrapped FTM contract
-    address public wFTM;
+    /// @notice RSKSmartBitcoincontract
+    address public RBTC;
 
-    constructor(address _addressRegistry, address _wFTM) public {
+    constructor(address _addressRegistry, address _RBTC) public {
         addressRegistry = _addressRegistry;
-        wFTM = _wFTM;
+        RTBTC = _RBTC;
     }
 
     /**
@@ -43,8 +43,8 @@ contract FantomPriceFeed is Ownable {
         external
         onlyOwner
     {
-        IFantomTokenRegistry tokenRegistry = IFantomTokenRegistry(
-            IFantomAddressRegistry(addressRegistry).tokenRegistry()
+        IRSKSmartBitcoinRegistry tokenRegistry = IFantomTokenRegistry(
+            IRSKSmartBitcoinAddressRegistry(addressRegistry).tokenRegistry()
         );
         require(tokenRegistry.enabled(_token), "invalid token");
         require(oracles[_token] == address(0), "oracle already set");
