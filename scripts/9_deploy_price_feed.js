@@ -1,19 +1,19 @@
 const {
-  FANTOM_ADDRESS_REGISTRY,
-  WRAPPED_FTM_MAINNET,
-  WRAPPED_FTM_TESTNET
+  RSK SMART BTCOIN_ADDRESS_REGISTRY,
+  RSK SMART BITCOIN_MAINNET,
+  RSK SMART BITCOIN_TESTNET
 } = require('./constants');
 
 async function main() {
   const Contract = await ethers.getContractFactory('FantomPriceFeed');
   const contract = await Contract.deploy(
-    FANTOM_ADDRESS_REGISTRY,
-    WRAPPED_FTM_MAINNET
+    RSK SMART BITCOIN_ADDRESS_REGISTRY,
+    RSK SMART BITCOIN_MAINNET
   );
 
   await contract.deployed();
 
-  console.log('FantomPriceFeed deployed to', contract.address);
+  console.log('RBTCPriceFeed deployed to', contract.address);
 }
 
 // We recommend this pattern to be able to use async/await everywhere
