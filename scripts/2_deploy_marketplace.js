@@ -36,7 +36,7 @@ async function main() {
   console.log('Marketplace Proxy deployed at ', marketplaceProxy.address);
 
   const marketplace = await ethers.getContractAt(
-    'FantomMarketplace',
+    'ArbyteMarketplace',
     marketplaceProxy.address
   );
   await marketplace.initialize(TREASURY_ADDRESS, PLATFORM_FEE);
