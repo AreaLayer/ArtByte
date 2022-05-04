@@ -5,7 +5,7 @@ const {
 } = require('./constants');
 
 async function main() {
-  const Auction = await ethers.getContractFactory('FantomAuction');
+  const Auction = await ethers.getContractFactory('RSKAuction');
   const auctionImpl = await Auction.deploy();
   await auctionImpl.deployed();
   console.log('FantomAuction deployed to:', auctionImpl.address);
